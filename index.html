@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>测试</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/validly.js"></script>
+    <script type="text/javascript">
+        function SubFn() {
+            //验证。
+            if (!$("#txtUserName").isEmpty({ eMsg: '用户名不能为空！' })) {
+                return;
+            }
+            if (!$("#txtPwd").isEmpty({ eMsg: '密码不能为空！' })) {
+                return;
+            }
+            if (!$("#txtRealName").isEmpty({ eMsg: '真实姓名不能为空！' })) {
+                return;
+            }
+            if (!$("#txtEmail").isEmail({ eMsg: '电子邮箱不能为空或格式不正确！' })) {
+                return;
+            }
+            if (!$("#txtMobile").isMobile({ eMsg: '移动电话不能为空或格式不正确（格式：以13、15、18开头的11位数字）！' })) {
+                return;
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>用户名：<input id="txtUserName" type="text"/></p>
+    <p>密码：<input type="password" id="txtPwd" /></p>
+    <p>真实姓名：<input id="txtRealName" type="text" /></p>
+    <p>电子邮箱：<input id="txtEmail" type="text"/></p>
+    <p>移动电话：<input id="txtMobile" type="text"/></p>
+    <p><span id="msg"></span></p>
+    <a id="btn" href="javascript:SubFn();">提交</a>
+</body>
+</html>
